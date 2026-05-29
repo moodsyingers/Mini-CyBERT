@@ -106,13 +106,13 @@ For detailed setup, see [`SETUP_GUIDE.md`](SETUP_GUIDE.md).
 python scripts/evaluate_ner.py
 ```
 
-**MCC re-evaluation** (confusion matrices + paper tables):
+**MCC re-evaluation** (confusion matrices + result tables):
 
 ```bash
 python final-edits/evaluate_with_mcc.py
 ```
 
-Outputs are written to `final-edits/results/` (JSON, CSV, LaTeX snippets, confusion matrices).
+Outputs are written to `final-edits/results/` (JSON, CSV, confusion matrices).
 
 ---
 
@@ -142,8 +142,7 @@ Mini-CyBERT/
 ├── scripts/                 # Data prep, training helpers, evaluation
 ├── config/                  # 31-label NER schema
 ├── datasets/cyber/          # Corpus, labels, vocabulary
-├── final-edits/             # MCC evaluation + updated result tables
-├── paper/                   # LaTeX manuscript
+├── final-edits/             # MCC evaluation + result tables
 ├── model_training_sheiley.ipynb
 ├── README.md
 └── SETUP_GUIDE.md
@@ -161,14 +160,6 @@ Mini-CyBERT/
 
 ---
 
-## Paper
-
-LaTeX source: [`paper/mini_cybert_paper.tex`](paper/mini_cybert_paper.tex)
-
-MCC table updates for the manuscript: [`final-edits/results/paper_table_updates.tex`](final-edits/results/paper_table_updates.tex)
-
----
-
 ## Authors
 
 **Sheiley Patel** — Department of Computer Science, California State University, Sacramento  
@@ -178,10 +169,29 @@ MCC table updates for the manuscript: [`final-edits/results/paper_table_updates.
 
 ## References
 
-1. Devlin et al., *BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding*, NAACL 2019
-2. Ranade et al., *CyBERT: Contextualized Embeddings for the Cybersecurity Domain*, IEEE Big Data 2021
-3. Lal et al., [CyNER benchmark](https://huggingface.co/datasets/CynerAI/CyNER), 2022
-4. [National Vulnerability Database (NVD)](https://nvd.nist.gov/)
+[1] S. Zhou, J. Liu, X. Zhong, and W. Zhao, "Named Entity Recognition Using BERT with Whole Word Masking in Cybersecurity Domain," in *Proc. IEEE 6th International Conference on Big Data Analytics (ICBDA)*, 2021, pp. 316–320.
+
+[2] J. Devlin, M.-W. Chang, K. Lee, and K. Toutanova, "BERT: Pre-training of deep bidirectional transformers for language understanding," in *Proc. NAACL-HLT*, 2019, pp. 4171–4186.
+
+[3] P. Ranade, A. Piplai, S. Mittal, A. Joshi, and T. Finin, "CyBERT: Contextualized embeddings for the cybersecurity domain," in *Proc. IEEE Big Data*, 2021, pp. 3334–3342.
+
+[4] M. Bayer et al., "CySecBERT: A domain-adapted language model for the cybersecurity domain," *ACM Trans. Privacy Security*, vol. 26, no. 3, pp. 1–27, 2023.
+
+[5] National Institute of Standards and Technology, "National Vulnerability Database," 2024. [Online]. Available: https://nvd.nist.gov/
+
+[6] S. Lal et al., "CyNER: A benchmark dataset for cybersecurity named entity recognition," Hugging Face Datasets, 2022. [Online]. Available: https://huggingface.co/datasets/CynerAI/CyNER
+
+[7] Y. Liu et al., "RoBERTa: A robustly optimized BERT pretraining approach," arXiv:1907.11692, 2019.
+
+[8] Z. Lan et al., "ALBERT: A lite BERT for self-supervised learning of language representations," in *Proc. ICLR*, 2020.
+
+[9] V. Sanh et al., "DistilBERT, a distilled version of BERT: Smaller, faster, cheaper and lighter," arXiv:1910.01108, 2019.
+
+[10] J. Lee et al., "BioBERT: A pre-trained biomedical language representation model for biomedical text mining," *Bioinformatics*, vol. 36, no. 4, pp. 1234–1240, 2020.
+
+[11] I. Beltagy, K. Lo, and A. Cohan, "SciBERT: A pretrained language model for scientific text," in *Proc. EMNLP-IJCNLP*, 2019, pp. 3615–3620.
+
+[12] E. Tjong Kim Sang and F. De Meulder, "Introduction to the CoNLL-2003 shared task: Language-independent named entity recognition," in *Proc. CoNLL*, 2003, pp. 142–147.
 
 ---
 
