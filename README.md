@@ -2,7 +2,7 @@
 
 A domain-adaptive BERT-based pipeline for **cybersecurity Named Entity Recognition (NER)** and **Masked Language Modeling (MLM)**, with a Flask API and React UI for interactive analysis.
 
-**Repository:** [github.com/moodsyingers/Mini-CyBERT](https://github.com/moodsyingers/Mini-CyBERT)
+**Repository:** github.com/moodsyingers/Mini-CyBERT
 
 ---
 
@@ -19,7 +19,7 @@ Mini-CyBERT extends BERT with cybersecurity vocabulary and uses a two-stage trai
 
 ## Results (NER)
 
-Re-evaluated with confusion matrices and **Matthews Correlation Coefficient (MCC)** for imbalanced token classification. See [`final-edits/SUMMARY_FOR_ADVISOR.md`](final-edits/SUMMARY_FOR_ADVISOR.md) for interpretation.
+Re-evaluated with confusion matrices and **Matthews Correlation Coefficient (MCC)** for imbalanced token classification. See `final-edits/SUMMARY_FOR_ADVISOR.md` for interpretation.
 
 | Metric | Validation | Test |
 |--------|------------|------|
@@ -30,7 +30,7 @@ Re-evaluated with confusion matrices and **Matthews Correlation Coefficient (MCC
 
 Token accuracy is high because most tokens are label `O`; MCC uses TP, TN, FP, and FN and remains informative under class imbalance.
 
-Full tables: [`final-edits/results/main_results_with_mcc.csv`](final-edits/results/main_results_with_mcc.csv)
+Full tables: `final-edits/results/main_results_with_mcc.csv`
 
 ---
 
@@ -63,11 +63,11 @@ models/
 └── mini_cybert_final/      # NER checkpoint
 ```
 
-Train your own with [`model_training_sheiley.ipynb`](model_training_sheiley.ipynb), or add a download link here once weights are hosted (Google Drive, Hugging Face, etc.).
+Train your own using `model_training_sheiley.ipynb`, or host weights separately (Google Drive, Hugging Face, etc.) and document the download steps here.
 
 ### 3. NER data
 
-Obtain the [CyNER dataset](https://huggingface.co/datasets/CynerAI/CyNER), save as `datasets/cyber/cyberner.csv`, then run:
+Obtain the CyNER dataset (see reference [6]), save as `datasets/cyber/cyberner.csv`, then run:
 
 ```bash
 python scripts/clean_cyberner_dataset.py
@@ -83,7 +83,7 @@ Output: `datasets/cyber/cyberner_clean.csv`
 python backend/ner_api.py
 ```
 
-API: http://localhost:5001
+API: `http://localhost:5001`
 
 **Frontend** (new terminal):
 
@@ -92,9 +92,9 @@ cd frontend
 npm run dev
 ```
 
-UI: http://localhost:5173
+UI: `http://localhost:5173`
 
-For detailed setup, see [`SETUP_GUIDE.md`](SETUP_GUIDE.md).
+For detailed setup, see `SETUP_GUIDE.md`.
 
 ---
 
@@ -118,11 +118,13 @@ Outputs are written to `final-edits/results/` (JSON, CSV, confusion matrices).
 
 ## Training
 
-End-to-end training is documented in [`model_training_sheiley.ipynb`](model_training_sheiley.ipynb):
+End-to-end training steps:
 
 1. Vocabulary extension (TF-IDF cyber terms)
 2. MLM on NVD corpus (3 epochs)
 3. NER fine-tuning (10 epochs, 31-label head)
+
+Open `model_training_sheiley.ipynb` in Jupyter or Google Colab to run the full pipeline.
 
 **MLM data pipeline:**
 
